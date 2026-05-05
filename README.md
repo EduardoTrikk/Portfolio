@@ -59,28 +59,6 @@ Links para redes sociais e opção de cópia de email com um clique.
 
 ---
 
-## 🚀 Como Usar
-
-### Opção 1: Abrir Localmente
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/EduardoTrikk/Portfolio.git
-   ```
-
-2. Navegue até a pasta:
-   ```bash
-   cd Portfolio
-   ```
-
-3. Abra o arquivo `portfolio.html` no navegador.
-
-### Opção 2: Deploy Online
-- **GitHub Pages**: Ative GitHub Pages nas configurações do repositório
-- **Vercel**: Conecte o repositório e faça deploy automático
-- **Netlify**: Arraste a pasta para deploy instantâneo
-
----
-
 ## 💻 Principais Funcionalidades
 
 ### Botão de Copiar Email
@@ -108,53 +86,18 @@ Layout adaptável que se ajusta perfeitamente a qualquer tamanho de tela.
 
 ## 📊 Projetos Destaque
 
-### Sistema de Registro e Gestão de Softwares
+### Aplicação para Comerciantes de Hortifrutigranjeiro
 **TCC — Projeto de Conclusão de Curso**
-- Plataforma de registro e gerenciamento de softwares
+- Aplicação voltada para aumentar a visibilidade de comerciantes do CEASA
 - Backend com Node.js e Frontend com React
-- Banco de dados PostgreSQL
+- Banco de dados SQL
 
 ### [Outros projetos em desenvolvimento...]
-
----
-
-## 📱 Redes Sociais
-
-- 💼 **LinkedIn**: [Eduardo Patrick](https://www.linkedin.com/in/eduardo-trikk)
-- 🐙 **GitHub**: [@EduardoTrikk](https://github.com/EduardoTrikk)
-- 📧 **Email**: edu.patrick.lima@gmail.com
-
----
-
-## 📝 Licença
-
-Este projeto está licenciado sob a **MIT License** — veja o arquivo LICENSE para detalhes.
-
----
-
-## 🤝 Contribuições
-
-Sugestões e feedbacks são bem-vindos! Fique à vontade para:
-- Abrir issues com sugestões
-- Fazer fork e propor melhorias
-- Enviar pull requests
-
----
-
-## 📅 Histórico de Atualizações
-
-### v1.0 (05/05/2026)
-- ✅ Lançamento inicial
-- ✅ Implementação de todas as seções principais
-- ✅ Funcionalidade de copiar email
-- ✅ Design responsivo completo
 
 ---
 
 <div align="center">
 
 **Desenvolvido com ❤️ por Eduardo Patrick**
-
-⭐ Se este portfólio foi útil, considere dar uma star!
 
 </div>
