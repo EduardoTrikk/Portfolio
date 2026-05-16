@@ -1,6 +1,6 @@
 # 👨‍💻 Eduardo Patrick — Dev Portfolio
 
-Um portfólio web moderno e minimalista de um engenheiro de software especializado em desenvolvimento full stack.
+Um portfólio web moderno e minimalista de um engenheiro de software especializado em desenvolvimento web.
 
 ![Portfolio Preview](https://img.shields.io/badge/Status-Online-success?style=flat-square) ![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)
 

@@ -3,517 +3,395 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Eduardo - Developer</title>
+<title>Eduardo Patrick — Web Developer | Samurai Edition</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Serif+JP:wght@200;300;400;600;700&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <a href="#hero" class="nav-logo">EDUARDO.PATRICK</a>
-  <ul class="nav-links">
-    <li><a href="#projects">Projetos</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#education">Formação</a></li>
-    <li><a href="#about">Sobre</a></li>
-    <li><a href="#contact">Contato</a></li>
-  </ul>
+  <!-- ATMOSPHERE (Morph & Sakura Canvas) -->
+  <canvas id="morphCanvas" class="morph-canvas" aria-hidden="true"></canvas>
+  <canvas id="sakuraCanvas" class="sakura-canvas" aria-hidden="true"></canvas>
+
+
+<!-- ═══════════════════ NAV ═══════════════════ -->
+<nav id="site-nav">
+  <a href="#hero" class="nav-logo">
+    <span class="logo-text">EDUARDO.PATRICK</span>
+  </a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="#hero"      data-i18n="nav.home">Home</a></li>
+      <li><a href="#projects"  data-i18n="nav.projects">Projetos</a></li>
+      <li><a href="#skills"    data-i18n="nav.skills">Skills</a></li>
+      <li><a href="#education" data-i18n="nav.education">Formação</a></li>
+      <li><a href="#about"     data-i18n="nav.about">Sobre</a></li>
+      <li><a href="#contact"   data-i18n="nav.contact">Contato</a></li>
+    </ul>
+    <button class="lang-toggle" id="langToggle" type="button" aria-label="Toggle language">
+      <span class="lang-opt" data-i18n="lang.pt">PT</span>
+      <span class="lang-sep">|</span>
+      <span class="lang-opt" data-i18n="lang.en">EN</span>
+    </button>
+  </div>
+  <button class="nav-toggle" id="navToggle" type="button" aria-label="Menu">☰</button>
+  
+  <div class="nav-mobile" id="navMobile" hidden>
+    <a href="#hero"      data-i18n="nav.home">Home</a>
+    <a href="#projects"  data-i18n="nav.projects">Projetos</a>
+    <a href="#skills"    data-i18n="nav.skills">Skills</a>
+    <a href="#education" data-i18n="nav.education">Formação</a>
+    <a href="#about"     data-i18n="nav.about">Sobre</a>
+    <a href="#contact"   data-i18n="nav.contact">Contato</a>
+    <button class="lang-toggle" id="langToggleMobile" type="button">
+      <span class="lang-opt" data-i18n="lang.pt">PT</span>
+      <span class="lang-sep">|</span>
+      <span class="lang-opt" data-i18n="lang.en">EN</span>
+    </button>
+  </div>
 </nav>
 
-<!-- HERO -->
+<!-- ═══════════════════ HERO ═══════════════════ -->
 <section id="hero">
-  <div class="hero-glow"></div>
-  <div class="hero-grid">
-    <div class="hero-content fade-in">
-      <div class="hero-badge">Disponível para oportunidades</div>
-      <h1 class="hero-name">Eduardo<br><span>Patrick</span></h1>
-      <p class="hero-title">Desenvolvedor Full Stack · Engenheiro de Software</p>
-      <p class="hero-desc">
-        Desenvolvedor com formação em Engenharia de Software, especializado em construção de sistemas web modernos, APIs robustas e experiências de usuário centradas no que realmente importa.
-      </p>
-      <div class="hero-cta">
-        <a href="#projects" class="btn-primary">Ver Projetos →</a>
-        <a href="#contact" class="btn-ghost">Entrar em contato</a>
-      </div>
-    </div>
-
-    <div class="hero-visual fade-in">
-      <div class="hero-card">
-        <div class="code-lines">
-          <div class="code-dim">// dev.profile.js</div>
-          <br>
-          <div><span class="code-key">const</span> <span class="code-gold">dev</span> = {</div>
-          <div>&nbsp;&nbsp;<span class="code-key">nome</span>: <span class="code-str">"Eduardo Patrick"</span>,</div>
-          <div>&nbsp;&nbsp;<span class="code-key">role</span>: <span class="code-str">"Full Stack Developer"</span>,</div>
-          <div>&nbsp;&nbsp;<span class="code-key">foco</span>: <span class="code-str">"Web Development and mobile apps"</span>,</div>
-          <div>&nbsp;&nbsp;<span class="code-key">principaisTecnologias</span>: [<span class="code-str">"JavaScript"</span>, <span class="code-str">"React"</span>, <span class="code-str">"Node.js"</span>, <span class="code-str">"Python"</span>],</div>
-          <div>&nbsp;&nbsp;<span class="code-key">diferencial</span>: <span class="code-str">"Desenvolvimento de projetos reais com foco em solução de problemas"</span>,</div>
-          <div>&nbsp;&nbsp;<span class="code-key">status</span>: <span class="code-gold">"Disponível para oportunidades"</span>,</div>
-          <div>};</div>
-        </div>
-        <div class="hero-stats">
-          <div class="stat">
-            <span class="stat-n">5+</span>
-            <div class="stat-l">Anos de estudo</div>
-          </div>
-          <div class="stat">
-            <span class="stat-n">5+</span>
-            <div class="stat-l">Tecnologias</div>
-          </div>
-          <div class="stat">
-            <span class="stat-n">3</span>
-            <div class="stat-l">Projetos reais</div>
-          </div>
-          <div class="stat">
-            <span class="stat-n">∞</span>
-            <div class="stat-l">Curiosidade</div>
-          </div>
-        </div>
-      </div>
+  
+  <div class="hero-content fade-in">
+    <div class="hero-badge" data-i18n="hero.badge">Disponível para oportunidades</div>
+    <h1 class="hero-name">Eduardo<br><span>Patrick</span></h1>
+    <h2 class="hero-title" data-i18n="hero.title">Automação · Desenvolvimento Web · Segurança</h2>
+    <p class="hero-desc" data-i18n="hero.desc">
+      Desenvolvedor web focado em automação e desenvolvimento seguro, construindo aplicações web modernas com ênfase em produtividade e experiência do usuário. Como um samurai afiando sua espada, busco a maestria em cada linha de código.
+    </p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn-primary" data-i18n="hero.ctaProjects">Ver Projetos</a>
+      <a href="#contact"  class="btn-ghost"   data-i18n="hero.ctaContact">Entrar em contato</a>
     </div>
   </div>
 </section>
 
 <div class="section-divider"></div>
 
-<!-- PROJECTS -->
+<!-- ═══════════════════ PROJECTS ═══════════════════ -->
 <section id="projects">
+  
   <div class="section-inner">
-    <div class="section-label">01 — Projetos</div>
-    <h2 class="section-title">O que eu construí</h2>
-    <p class="section-subtitle">Projetos desenvolvidos com foco em solução real de problemas, boas práticas de engenharia e entrega de valor ao usuário final.</p>
+    <div class="section-label fade-in"><span data-i18n="projects.label">01 — Projetos</span></div>
+    <h2 class="section-title fade-in" data-i18n="projects.title">O que eu construí</h2>
+    <p class="section-subtitle fade-in" data-i18n="projects.subtitle">Projetos desenvolvidos com foco em solução real de problemas, boas práticas de engenharia e entrega de valor ao usuário final.</p>
 
     <div class="projects-grid">
-
-    <!-- Projeto 1: TCC / Brotar+ -->
-    <div class="project-card fade-in">
-      <div class="project-main">
-        <div class="project-number">Projeto 01</div>
-        <h3 class="project-title">Brotar+ · Aplicativo para Comerciantes Hortifrutigranjeiros</h3>
-        <p class="project-role">TCC · Projeto de Conclusão de Curso</p>
-
-        <div class="project-block">
-          <div class="project-block-label">O Problema</div>
-          <p>
-          Comerciantes de um centro de distribuição de alimentos no estado do Pará enfrentam dificuldades na divulgação de seus produtos, o que limita o alcance de clientes e impacta diretamente nas vendas. A baixa presença digital e a dependência do fluxo local reduzem a competitividade desses profissionais.
-          </p>
-        </div>
-
-        <div class="project-block">
-          <div class="project-block-label">A Solução</div>
-          <p>
-          Desenvolvimento do <strong>Brotar+</strong>, um protótipo de aplicativo mobile voltado à exposição de produtos e apoio às vendas. A solução permite que vendedores criem vitrines digitais, organizem seus produtos, atualizem preços e se conectem diretamente com clientes, ampliando sua visibilidade no ambiente digital.
-          </p>
-        </div>
-
-        <div class="project-block">
-          <div class="project-block-label">Meu papel</div>
-          <p>
-          Pesquisa com usuários reais (18 participantes), aplicação de Design Thinking, construção de mapa de empatia, definição de requisitos (histórias de usuário), prototipação de interfaces no Figma e desenvolvimento do protótipo funcional da aplicação.
-          </p>
-        </div>
-      </div>
-
-      <div class="project-side">
-        <div class="tech-stack">
-          <div class="tech-label">Tecnologias</div>
-          <div class="tech-tags">
-            <span class="tech-tag">React Native</span>
-            <span class="tech-tag">Supabase</span>
-            <span class="tech-tag">Figma</span>
-            <span class="tech-tag">Node.js</span>
+      <!-- Projeto 1 -->
+      <article class="project-card slide-up">
+        <div class="project-main">
+          <div class="project-number" data-i18n="projects.p1.number">Projeto 01</div>
+          <h3 class="project-title" data-i18n="projects.p1.title">Brotar+ · App para Comerciantes</h3>
+          <p class="project-role" data-i18n="projects.p1.role">TCC · Mobile · UX/UI</p>
+          <div class="project-block">
+            <h4 class="project-block-label" data-i18n="projects.problem">O Problema</h4>
+            <p data-i18n="projects.p1.problem">Comerciantes enfrentam dificuldades na divulgação de produtos, limitando clientes e impactando vendas.</p>
+          </div>
+          <div class="project-block">
+            <h4 class="project-block-label" data-i18n="projects.solution">A Solução</h4>
+            <p data-i18n-html="projects.p1.solution">Desenvolvimento do <strong>Brotar+</strong>, aplicativo mobile para vitrines digitais e conexão direta com clientes.</p>
+          </div>
+          <div class="project-block">
+            <h4 class="project-block-label" data-i18n="projects.roleLabel">Meu papel</h4>
+            <p data-i18n="projects.p1.myRole">Pesquisa com usuários reais, prototipação e desenvolvimento do protótipo funcional.</p>
           </div>
         </div>
+        <aside class="project-side">
+          <div>
+            <h4 class="project-block-label" data-i18n="projects.tech">Tecnologias</h4>
+            <div class="tech-tags">
+              <span class="tech-tag">React Native</span>
+              <span class="tech-tag">Supabase</span>
+              <span class="tech-tag">Figma</span>
+            </div>
+          </div>
+          <div class="project-highlight" data-i18n-html="projects.p1.highlight">
+            <strong>📊 Resultados:</strong> Protótipo validado com usuários reais, alta intenção de uso.
+          </div>
+        </aside>
+      </article>
 
-        <div class="project-highlight">
-          <strong>📊 Resultados:</strong> Protótipo validado com usuários reais, considerado intuitivo e útil, com alta intenção de uso e potencial para ampliar vendas e alcance digital dos comerciantes.
-        </div>
-      </div>
-    </div>
-
-    <!-- Projeto 2: Copiloto de WhatsApp -->
-    <div class="project-card fade-in">
-      <div class="project-main">
-        <div class="project-number">Projeto 02</div>
-        <h3 class="project-title">Copiloto de WhatsApp para Pequenos Negócios</h3>
-        <p class="project-role">Full Stack · SaaS · Automação com Voz · Projeto Independente</p>
-
-        <div class="project-block">
-          <div class="project-block-label">O Problema</div>
-          <p>
-            Pequenos negócios que utilizam o WhatsApp como principal canal de vendas enfrentam sobrecarga operacional: precisam responder mensagens manualmente, organizar pedidos, gerenciar agendamentos e lembrar tarefas, tudo ao mesmo tempo. Isso reduz a produtividade e causa perda de oportunidades.
-          </p>
-        </div>
-
-        <div class="project-block">
-          <div class="project-block-label">A Solução</div>
-          <p>
-            Desenvolvimento de um copiloto inteligente para WhatsApp que automatiza o atendimento com foco em produtividade. O sistema lê mensagens em voz alta, permite respostas por comando de voz, cria lembretes automaticamente e organiza agendamentos e pedidos, reduzindo a necessidade de interação manual constante.
-          </p>
-        </div>
-
-        <div class="project-block">
-          <div class="project-block-label">Meu papel</div>
-          <p>
-            Idealização do produto, planejamento, organização e desenvolvimento. Arquitetura do sistema, modelagem do banco de dados, construção da API, integração com WhatsApp e implementação dos módulos de voz (speech-to-text e text-to-speech), além do planejamento de escalabilidade da plataforma.
-          </p>
-        </div>
-      </div>
-
-      <div class="project-side">
-        <div class="tech-stack">
-          <div class="tech-label">Tecnologias</div>
-          <div class="tech-tags">
-            <span class="tech-tag">Node.js</span>
-            <span class="tech-tag">React</span>
-            <span class="tech-tag">Next.js</span>
-            <span class="tech-tag">PostgreSQL</span>
-            <span class="tech-tag">WebSocket</span>
-            <span class="tech-tag">WhatsApp API</span>
-            <span class="tech-tag">Speech-to-Text</span>
-            <span class="tech-tag">Text-to-Speech</span>
+      <!-- Projeto 2 -->
+      <article class="project-card slide-up">
+        <div class="project-main">
+          <div class="project-number" data-i18n="projects.p2.number">Projeto 02</div>
+          <h3 class="project-title" data-i18n="projects.p2.title">Copiloto de WhatsApp</h3>
+          <p class="project-role" data-i18n="projects.p2.role">Full Stack · SaaS · IA · Voz</p>
+          <div class="project-block">
+            <h4 class="project-block-label" data-i18n="projects.problem">O Problema</h4>
+            <p data-i18n="projects.p2.problem">Pequenos negócios no WhatsApp enfrentam sobrecarga operacional e perdem oportunidades.</p>
+          </div>
+          <div class="project-block">
+            <h4 class="project-block-label" data-i18n="projects.solution">A Solução</h4>
+            <p data-i18n="projects.p2.solution">Copiloto inteligente que automatiza atendimento, lê mensagens e responde por comando de voz.</p>
+          </div>
+          <div class="project-block">
+            <h4 class="project-block-label" data-i18n="projects.roleLabel">Meu papel</h4>
+            <p data-i18n="projects.p2.myRole">Idealização, arquitetura, integração com WhatsApp e módulos de voz.</p>
           </div>
         </div>
-
-        <div class="project-highlight">
-          <strong>⚡ Diferencial:</strong> Sistema orientado a voz que reduz interação manual, permitindo que o usuário opere o atendimento sem precisar tocar no celular constantemente.
-        </div>
-      </div>
-    </div>
-
-    <!-- Projeto 03: Jogo Educativo Climático -->
-    <div class="project-card fade-in">
-      <div class="project-main">
-        <div class="project-number">Projeto 03</div>
-        <h3 class="project-title">Climatic Adventure: Jogo Educativo sobre Mudanças Climáticas</h3>
-        <p class="project-role">Game Dev · Projeto Acadêmico · Hackathon NASA</p>
-
-        <div class="project-block">
-          <div class="project-block-label">O Problema</div>
-          <p>
-            A conscientização sobre mudanças climáticas ainda enfrenta desafios no ambiente educacional, especialmente na forma de engajar crianças e adolescentes. Métodos tradicionais nem sempre estimulam reflexão crítica ou interesse contínuo sobre o tema.
-          </p>
-        </div>
-
-        <div class="project-block">
-          <div class="project-block-label">A Solução</div>
-          <p>
-            Desenvolvimento do jogo digital Climatic Adventure, uma experiência interativa baseada em decisões que impactam o mundo virtual. O jogador enfrenta situações do cotidiano relacionadas ao meio ambiente, aprendendo sobre o ODS 13 de forma lúdica, com feedback imediato e narrativa dinâmica.
-          </p>
-        </div>
-
-        <div class="project-block">
-          <div class="project-block-label">Meu papel</div>
-          <p>
-            Desenvolvimento do jogo utilizando a engine Godot, definição das mecânicas de gameplay, implementação da lógica de decisões e construção da experiência do usuário. Participação na coleta e análise de dados para validação do impacto educacional do projeto.
-          </p>
-        </div>
-      </div>
-
-      <div class="project-side">
-        <div class="tech-stack">
-          <div class="tech-label">Tecnologias</div>
-          <div class="tech-tags">
-            <span class="tech-tag">Godot Engine</span>
-            <span class="tech-tag">GDScript</span>
-            <span class="tech-tag">Game Design</span>
-            <span class="tech-tag">UX Design</span>
-            <span class="tech-tag">Itch.io Assets</span>
+        <aside class="project-side">
+          <div>
+            <h4 class="project-block-label" data-i18n="projects.tech">Tecnologias</h4>
+            <div class="tech-tags">
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">PostgreSQL</span>
+              <span class="tech-tag">STT/TTS</span>
+            </div>
+          </div>
+          <div class="project-highlight" data-i18n-html="projects.p2.highlight">
+            <strong>⚡ Diferencial:</strong> Operação hands-free completa do atendimento.
+          </div>
+        </aside>
+      </article>
+      
+      <!-- Projeto 3 -->
+      <article class="project-card slide-up">
+        <div class="project-main">
+          <div class="project-number" data-i18n="projects.p3.number">Projeto 03</div>
+          <h3 class="project-title" data-i18n="projects.p3.title">Climatic Adventure</h3>
+          <p class="project-role" data-i18n="projects.p3.role">Game Dev · Educativo · Hackathon NASA</p>
+          <div class="project-block">
+            <h4 class="project-block-label" data-i18n="projects.problem">O Problema</h4>
+            <p data-i18n="projects.p3.problem">Dificuldade em engajar jovens na conscientização sobre mudanças climáticas.</p>
+          </div>
+          <div class="project-block">
+            <h4 class="project-block-label" data-i18n="projects.solution">A Solução</h4>
+            <p data-i18n="projects.p3.solution">Jogo digital interativo com decisões que impactam o mundo virtual.</p>
+          </div>
+          <div class="project-block">
+            <h4 class="project-block-label" data-i18n="projects.roleLabel">Meu papel</h4>
+            <p data-i18n="projects.p3.myRole">Desenvolvimento na Godot Engine, mecânicas de gameplay e UX.</p>
           </div>
         </div>
+        <aside class="project-side">
+          <div>
+            <h4 class="project-block-label" data-i18n="projects.tech">Tecnologias</h4>
+            <div class="tech-tags">
+              <span class="tech-tag">Godot Engine</span>
+              <span class="tech-tag">GDScript</span>
+              <span class="tech-tag">Game Design</span>
+            </div>
+          </div>
+          <div class="project-highlight" data-i18n-html="projects.p3.highlight">
+            <strong>🌍 Impacto:</strong> 89,5% de eficácia no aprendizado reportado.
+          </div>
+        </aside>
+      </article>
 
-        <div class="project-highlight">
-          <strong>🌍 Impacto:</strong> 89,5% dos participantes relataram aprendizado sobre mudanças climáticas e 84,2% reconheceram o potencial do jogo para conscientização ambiental.
-        </div>
-      </div>
-    </div>
-
-    <!-- Projeto 04: Jogo Tetris em Python -->
-    <div class="project-card fade-in">
-      <div class="project-main">
-        <div class="project-number">Projeto 04</div>
-        <h3 class="project-title">Jogo Tetris desenvolvido em Python</h3>
-        <p class="project-role">Game Dev · Lógica · Projeto Independente</p>
-
-        <div class="project-block">
-          <div class="project-block-label">O Problema</div>
-          <p>
-            Implementar um jogo clássico exige lidar com regras dinâmicas, controle de estados, colisões e renderização em tempo real, sendo um desafio relevante para consolidar lógica de programação e estruturas de dados.
-          </p>
-        </div>
-
-        <div class="project-block">
-          <div class="project-block-label">A Solução</div>
-          <p>
-            Desenvolvimento completo do jogo Tetris utilizando Python, com sistema de movimentação de peças, detecção de colisão, rotação de blocos, pontuação e controle de velocidade progressiva, simulando a experiência clássica do jogo.
-          </p>
-        </div>
-
-        <div class="project-block">
-          <div class="project-block-label">Meu papel</div>
-          <p>
-            Implementação da lógica do jogo, controle de estados, algoritmos de colisão e renderização da interface. Estruturação do código para manter organização e legibilidade, aplicando boas práticas de programação.
-          </p>
-        </div>
-      </div>
-
-      <div class="project-side">
-        <div class="tech-stack">
-          <div class="tech-label">Tecnologias</div>
-          <div class="tech-tags">
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">Pygame</span>
-            <span class="tech-tag">Game Logic</span>
-            <span class="tech-tag">Algorithms</span>
+      <!-- Projeto 4 -->
+      <article class="project-card slide-up">
+        <div class="project-main">
+          <div class="project-number" data-i18n="projects.p4.number">Projeto 04</div>
+          <h3 class="project-title" data-i18n="projects.p4.title">Affiliate Automation with n8n</h3>
+          <p class="project-role" data-i18n="projects.p4.role">Engenharia de Automação · Web Scraping · n8n</p>
+          <div class="project-block">
+            <h4 class="project-block-label" data-i18n="projects.problem">O Problema</h4>
+            <p data-i18n="projects.p4.problem">Encontrar e divulgar ofertas de afiliados manualmente é demorado e não escala, gerando perda de oportunidades diárias de comissão.</p>
+          </div>
+          <div class="project-block">
+            <h4 class="project-block-label" data-i18n="projects.solution">A Solução</h4>
+            <p data-i18n="projects.p4.solution">Pipeline automatizado usando n8n que rastreia plataformas de afiliados, identifica as melhores ofertas com base em critérios de conversão e publica os links automaticamente em canais de transmissão (Telegram/WhatsApp).</p>
+          </div>
+          <div class="project-block">
+            <h4 class="project-block-label" data-i18n="projects.roleLabel">Meu papel</h4>
+            <p data-i18n="projects.p4.myRole">Criei o workflow visual no n8n, integrei plataformas via API, manipulei dados usando JSON/JavaScript e configurei webhooks para o envio automático de mensagens.</p>
           </div>
         </div>
-
-        <div class="project-highlight">
-          <strong>🎮 Destaque:</strong> Implementação completa das mecânicas clássicas do Tetris, incluindo rotação de peças, detecção de linhas completas e progressão de dificuldade.
-        </div>
-      </div>
+        <aside class="project-side">
+          <div>
+            <h4 class="project-block-label" data-i18n="projects.tech">Tecnologias</h4>
+            <div class="tech-tags">
+              <span class="tech-tag">n8n</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">JSON</span>
+              <span class="tech-tag">Webhooks</span>
+            </div>
+          </div>
+          <div class="project-highlight" data-i18n-html="projects.p4.highlight">
+            <strong>⚙️ Eficiência:</strong> Um fluxo 100% automatizado que opera 24/7, garantindo a curadoria e publicação das melhores ofertas sem intervenção humana.
+          </div>
+        </aside>
+      </article>
     </div>
-
     </div>
   </div>
 </section>
 
 <div class="section-divider"></div>
 
-<!-- SKILLS -->
+<!-- ═══════════════════ SKILLS ═══════════════════ -->
 <section id="skills">
+  
   <div class="section-inner">
-    <div class="section-label">02 — Competências</div>
-    <h2 class="section-title">Tecnologias & Skills</h2>
-    <p class="section-subtitle">
-      Stack construída na prática — com foco em sistemas reais, automação, voz, integrações e desenvolvimento fullstack.
-    </p>
+    <div class="section-label fade-in"><span data-i18n="skills.label">02 — Competências</span></div>
+    <h2 class="section-title fade-in" data-i18n="skills.title">Tecnologias & Skills</h2>
+    <p class="section-subtitle fade-in" data-i18n="skills.subtitle">As habilidades que tenho lapidado ao longo da minha jornada como engenheiro de software.</p>
 
     <div class="skills-grid">
-      <div class="skill-group fade-in">
+      <div class="skill-group slide-up">
         <span class="skill-group-icon">⚛️</span>
-        <div class="skill-group-title">Frontend</div>
+        <h3 class="skill-group-title" data-i18n="skills.groups.frontend">Frontend</h3>
         <ul class="skill-list">
-          <li class="skill-item">React.js · Componentização · Hooks</li>
-          <li class="skill-item">Interfaces para dashboards e sistemas</li>
-          <li class="skill-item">HTML5 · CSS3 · Responsividade</li>
-          <li class="skill-item">JavaScript · ES6+</li>
-          <li class="skill-item">UX para sistemas mobile e web</li>
+          <li class="skill-item" data-i18n="skills.items.frontend.1">React.js</li>
+          <li class="skill-item" data-i18n="skills.items.frontend.2">DOM Manipulation</li>
+          <li class="skill-item" data-i18n="skills.items.frontend.3">CSS Avançado</li>
+          <li class="skill-item" data-i18n="skills.items.frontend.4">JavaScript</li>
+          <li class="skill-item" data-i18n="skills.items.frontend.5">UI/UX Responsivo</li>
         </ul>
       </div>
 
-      <div class="skill-group fade-in">
+      <div class="skill-group slide-up">
         <span class="skill-group-icon">⚙️</span>
-        <div class="skill-group-title">Backend</div>
+        <h3 class="skill-group-title" data-i18n="skills.groups.backend">Backend</h3>
         <ul class="skill-list">
-          <li class="skill-item">Node.js · APIs REST</li>
-          <li class="skill-item">Websockets · Comunicação em tempo real</li>
-          <li class="skill-item">Webhooks · Tempo real</li>
-          <li class="skill-item">Java · sistemas com CRUD</li>
+          <li class="skill-item" data-i18n="skills.items.backend.1">Node.js</li>
+          <li class="skill-item" data-i18n="skills.items.backend.2">Websockets</li>
+          <li class="skill-item" data-i18n="skills.items.backend.3">APIs REST</li>
         </ul>
       </div>
 
-      <div class="skill-group fade-in">
-        <span class="skill-group-icon">🗄️</span>
-        <div class="skill-group-title">Banco de Dados</div>
-        <ul class="skill-list">
-          <li class="skill-item">PostgreSQL · Modelagem relacional</li>
-          <li class="skill-item">SQL Server</li>
-          <li class="skill-item">Supabase</li>
-          <li class="skill-item">Estruturação de entidades e relacionamentos</li>
-          <li class="skill-item">Persistência de dados para sistemas reais</li>
-        </ul>
-      </div>
-
-      <div class="skill-group fade-in">
+      <div class="skill-group slide-up">
         <span class="skill-group-icon">🤖</span>
-        <div class="skill-group-title">Automação & Integrações</div>
+        <h3 class="skill-group-title" data-i18n="skills.groups.automation">Automação & IA</h3>
         <ul class="skill-list">
-          <li class="skill-item">Speech-to-Text · Text-to-Speech</li>
-          <li class="skill-item">Processamento de mensagens e eventos</li>
-          <li class="skill-item">Lógica de lembretes e agendamentos</li>
-          <li class="skill-item">Fluxos automatizados de atendimento</li>
-        </ul>
-      </div>
-
-      <div class="skill-group fade-in">
-        <span class="skill-group-icon">🎮</span>
-        <div class="skill-group-title">Desenvolvimento de Jogos</div>
-        <ul class="skill-list">
-          <li class="skill-item">Godot Engine · Unity · Roblox Studio</li>
-          <li class="skill-item">Python · Programação de jogos</li>
-          <li class="skill-item">Mecânicas de decisão e narrativa interativa</li>
-          <li class="skill-item">Design de experiência educativa</li>
-          <li class="skill-item">Integração de assets e lógica de gameplay</li>
-        </ul>
-      </div>
-
-      <div class="skill-group fade-in">
-        <span class="skill-group-icon">📐</span>
-        <div class="skill-group-title">Engenharia de Software</div>
-        <ul class="skill-list">
-          <li class="skill-item">Modelagem de sistemas</li>
-          <li class="skill-item">Levantamento de requisitos</li>
-          <li class="skill-item">Arquitetura de sistemas fullstack</li>
-          <li class="skill-item">Documentação técnica</li>
-          <li class="skill-item">Desenvolvimento orientado a projetos reais</li>
-          <li class="skill-item">Metodologias ágeis</li>
-          <li class="skill-item">Boas práticas de código e design patterns</li>
-          <li class="skill-item">Testes automatizados</li>
-        </ul>
-      </div>
-
-      <div class="skill-group fade-in">
-        <span class="skill-group-icon">🛠️</span>
-        <div class="skill-group-title">Ferramentas & Workflow</div>
-        <ul class="skill-list">
-          <li class="skill-item">Git · GitHub · Versionamento</li>
-          <li class="skill-item">NetBeans · IntelliJ · Android Studio · PyCharm · VSCode</li>
-          <li class="skill-item">Figma · Trello · Jira · Notion</li>
-          <li class="skill-item">Postman · Docker</li>
-          <li class="skill-item">VirturalBox · Linux · Kali Linux · MetaSploit</li>
-          <li class="skill-item">SQL Server Management Studio</li>
-          <li class="skill-item">Integração com APIs externas</li>
-          <li class="skill-item">Desenvolvimento incremental</li>
+          <li class="skill-item" data-i18n="skills.items.automation.1">Automação de tarefas</li>
+          <li class="skill-item" data-i18n="skills.items.automation.2">Integração com IA</li>
+          <li class="skill-item" data-i18n="skills.items.automation.3">Fluxos automatizados</li>
+          <li class="skill-item" data-i18n="skills.items.automation.4">Lógica de processos</li>
+          <li class="skill-item" data-i18n="skills.items.automation.5">Integração com APIs externas</li>
         </ul>
       </div>
 
       <div class="skill-group fade-in">
         <span class="skill-group-icon">🔐</span>
-        <div class="skill-group-title">Segurança de Aplicações</div>
+        <h3 class="skill-group-title" data-i18n="skills.groups.security">Segurança</h3>
         <ul class="skill-list">
-          <li class="skill-item">Testes de penetração</li>
-          <li class="skill-item">Boas práticas de desenvolvimento seguro</li>
-          <li class="skill-item">Proteção contra vulnerabilidades comuns</li>
-          <li class="skill-item">Modelagem de ameaças</li>
-          <li class="skill-item">Análise de vulnerabilidades</li>
-          <li class="skill-item">Consciência sobre práticas de segurança</li>
+          <li class="skill-item" data-i18n="skills.items.security.1">Testes de penetração</li>
+          <li class="skill-item" data-i18n="skills.items.security.2">Boas práticas de desenvolvimento seguro</li>
+          <li class="skill-item" data-i18n="skills.items.security.3">Proteção contra vulnerabilidades comuns</li>
+          <li class="skill-item" data-i18n="skills.items.security.4">Modelagem de ameaças</li>
+          <li class="skill-item" data-i18n="skills.items.security.5">Análise de vulnerabilidades</li>
+          <li class="skill-item" data-i18n="skills.items.security.6">Consciência sobre práticas de segurança</li>
         </ul>
       </div>
+
+      <div class="skill-group fade-in">
+        <span class="skill-group-icon">🛠️</span>
+        <h3 class="skill-group-title" data-i18n="skills.groups.tools">Ferramentas & Workflow</h3>
+        <ul class="skill-list">
+          <li class="skill-item" data-i18n="skills.items.tools.1">Git · GitHub · Versionamento</li>
+          <li class="skill-item" data-i18n="skills.items.tools.2">NetBeans · IntelliJ · Android Studio · PyCharm · VSCode</li>
+          <li class="skill-item" data-i18n="skills.items.tools.3">Figma · Trello · Jira · Notion</li>
+          <li class="skill-item" data-i18n="skills.items.tools.4">Postman · Docker</li>
+          <li class="skill-item" data-i18n="skills.items.tools.5">VirturalBox · Linux · Kali Linux · MetaSploit</li>
+          <li class="skill-item" data-i18n="skills.items.tools.6">SQL Server Management Studio</li>
+          <li class="skill-item" data-i18n="skills.items.tools.7">Integração com APIs externas</li>
+          <li class="skill-item" data-i18n="skills.items.tools.8">Desenvolvimento incremental</li>
+        </ul>
+      </div>
+
+    </div>
     </div>
   </div>
 </section>
 
 <div class="section-divider"></div>
 
-<!-- EDUCATION -->
+<!-- ═══════════════════ EDUCATION ═══════════════════ -->
 <section id="education">
   <div class="section-inner">
-    <div class="section-label">03 — Formação</div>
-    <h2 class="section-title">Educação & Certificações</h2>
-
+    <div class="section-label fade-in"><span data-i18n="education.label">03 — Formação</span></div>
+    <h2 class="section-title fade-in" data-i18n="education.title">Educação & Certificações</h2>
+    
     <!-- FORMAÇÃO -->
     <div class="education-grid fade-in">
       <div class="edu-card">
-        <div class="edu-type">🎓 Graduação</div>
-        <div class="edu-degree">Engenharia de Software</div>
-        <div class="edu-school">Universidade do Estado do Pará — UEPA</div>
-        <div class="edu-year">2022 – 2026</div>
+        <div class="edu-type" data-i18n="education.degreeType">🎓 Graduação</div>
+        <div class="edu-degree" data-i18n="education.degreeName">Engenharia de Software</div>
+        <div class="edu-school" data-i18n="education.degreeSchool">Universidade do Estado do Pará — UEPA</div>
+        <div class="edu-year" data-i18n="education.degreeYear">2022 – 2026</div>
       </div>
     </div>
-
-    <!-- CERTIFICAÇÕES -->
-    <div class="cert-section-title">Certificações</div>
+    
+    <!-- CURSOS & CERTIFICADOS -->
     <div class="education-grid fade-in">
       <div class="edu-card">
-        <div class="edu-type">🛡️ Cisco</div>
-        <div class="edu-degree">Introdução à Cibersegurança</div>
-        <div class="edu-school">Cisco Networking Academy</div>
-        <div class="edu-year">Conclusão: 10 Mai 2025</div>
+        <div class="edu-type" data-i18n="education.c1.type">🛡️ Cisco</div>
+        <div class="edu-degree" data-i18n="education.c1.title">Introdução à Cibersegurança</div>
+        <div class="edu-school" data-i18n="education.c1.school">Networking Academy</div>
+        <div class="edu-year" data-i18n="education.c1.year">Conclusão: 10 Mai 2025</div>
       </div>
 
       <div class="edu-card">
-        <div class="edu-type">🌐 Cisco</div>
-        <div class="edu-degree">Noções Básicas de Rede</div>
-        <div class="edu-school">Cisco do Brasil · Networking Academy</div>
-        <div class="edu-year">Conclusão: 02 Out 2024</div>
+        <div class="edu-type" data-i18n="education.c2.type">🌐 Cisco</div>
+        <div class="edu-degree" data-i18n="education.c2.title">Noções Básicas de Rede</div>
+        <div class="edu-school" data-i18n="education.c2.school">Networking Academy</div>
+        <div class="edu-year" data-i18n="education.c2.year">Conclusão: 02 Out 2024</div>
       </div>
 
       <div class="edu-card">
-        <div class="edu-type">🔐 Cisco</div>
-        <div class="edu-degree">Segurança de Endpoint</div>
-        <div class="edu-school">SENAC/PA – Belém · Networking Academy</div>
-        <div class="edu-year">Conclusão: 14 Set 2024</div>
+        <div class="edu-type" data-i18n="education.c3.type">🔐 Cisco</div>
+        <div class="edu-degree" data-i18n="education.c3.title">Segurança de Endpoint</div>
+        <div class="edu-school" data-i18n="education.c3.school">Networking Academy</div>
+        <div class="edu-year" data-i18n="education.c3.year">Conclusão: 14 Set 2024</div>
       </div>
     </div>
 
-    <!-- CONHECIMENTOS -->
-    <div class="cert-section-title">Conhecimentos & Áreas de Estudo</div>
+    <h3 class="cert-section-title fade-in" data-i18n="education.areasTitle">Disciplinas Dominadas</h3>
     <div class="certs-list fade-in">
-      <div class="cert-item"><span>⚛️</span> React.js & Interfaces de Sistemas</div>
-      <div class="cert-item"><span>🟩</span> Node.js & APIs REST</div>
-      <div class="cert-item"><span>🤖</span> Automação</div>
-      <div class="cert-item"><span>🔐</span> Fundamentos de Segurança</div>
-      <div class="cert-item"><span>☕</span> Java & Programação Orientada a Objetos</div>
-      <div class="cert-item"><span>🗄️</span> SQL & Modelagem de Banco de Dados</div>
-      <div class="cert-item"><span>📐</span> Engenharia de Software & Requisitos</div>
-      <div class="cert-item"><span>🎮</span> Desenvolvimento de Jogos</div>
-      <div class="cert-item"><span>🧹</span> Clean Code & Boas Práticas</div>
+      <span class="cert-item" data-i18n-html="education.areas.1">⚛️ React</span>
+      <span class="cert-item" data-i18n-html="education.areas.2">🎨 Design UX/UI</span>
+      <span class="cert-item" data-i18n-html="education.areas.3">🟩 Node.js</span>
+      <span class="cert-item" data-i18n-html="education.areas.4">🤖 IA & Automação</span>
+      <span class="cert-item" data-i18n-html="education.areas.5">🔐 Segurança</span>
+      <span class="cert-item" data-i18n-html="education.areas.6">📐 Arquitetura</span>
+      <span class="cert-item" data-i18n-html="education.areas.7">🧹 Clean Code</span>
+    </div>
     </div>
   </div>
 </section>
 
 <div class="section-divider"></div>
 
-<!-- ABOUT -->
+<!-- ═══════════════════ ABOUT ═══════════════════ -->
 <section id="about">
+  
   <div class="section-inner">
-    <div class="section-label">04 — Sobre</div>
-    <h2 class="section-title">Quem sou eu</h2>
+    <div class="section-label fade-in"><span data-i18n="about.label">04 — Sobre</span></div>
+    <h2 class="section-title fade-in" data-i18n="about.title">A Filosofia</h2>
 
     <div class="about-grid">
       <div class="about-text fade-in">
-        <p>Sou estudante de <span>Engenharia de Software</span> com foco em desenvolvimento Full Stack, construindo sistemas que vão além do código, eles são focados em resolver problemas reais e melhorar a rotina de quem usa.</p>
-
-        <p>Tenho experiência prática no desenvolvimento de aplicações completas, atuando desde a <span>modelagem de dados e arquitetura backend</span> até a criação de interfaces funcionais e objetivas. Já desenvolvi projetos envolvendo <span>automação de processos, sistemas orientados a eventos e interação por voz</span>.</p>
-
-        <p>Tenho interesse em <span>segurança de aplicações</span>, buscando reduzir falhas e aplicar boas práticas desde a construção do sistema. Também foco em soluções que aumentam produtividade, como automações e ferramentas que reduzem tarefas manuais no dia a dia.</p>
-
-        <p>Acredito que um bom sistema precisa ser <span>simples de usar, seguro, eficiente e sustentável a longo prazo</span>. Por isso, aplico boas práticas como organização modular, clareza de código, validação de dados e atenção à experiência do usuário desde o início.</p>
-
-        <p>Busco uma oportunidade para atuar no desenvolvimento de produtos reais, contribuindo com soluções práticas e evoluindo constantemente como desenvolvedor.</p>
+        <p data-i18n-html="about.p1">Sou estudante de <span>Engenharia de Software</span> focado em construir sistemas robustos que resolvem problemas reais com elegância e eficiência.</p>
+        <p data-i18n-html="about.p2">Minha jornada passa pela <span>modelagem de arquiteturas backend escaláveis</span> até a criação de interfaces AAA. Tenho paixão por <span>automação inteligente e interações imersivas</span>.</p>
+        <p data-i18n-html="about.p4">Acredito que o código perfeito é como uma lâmina de katana: <span>afiado, preciso, limpo e construído para durar</span>.</p>
       </div>
 
-      <div class="about-values fade-in">
-        <div class="value-item">
-          <div class="value-icon">⚙️</div>
+      <div class="about-values">
+        <div class="value-item slide-up">
+          <span class="value-icon">⛩️</span>
           <div>
-            <div class="value-title">Pensamento de produto</div>
-            <div class="value-desc">Não foco só no código, mas no problema. Estruturo soluções pensando em uso real, eficiência e impacto no dia a dia.</div>
+            <h4 class="value-title" data-i18n="about.values.product.title">Visão de Produto</h4>
+            <p class="value-desc" data-i18n="about.values.product.desc">Foco no impacto real, experiência do usuário e na jornada completa da solução.</p>
           </div>
         </div>
-
-        <div class="value-item">
-          <div class="value-icon">🤖</div>
+        <div class="value-item slide-up">
+          <span class="value-icon">⚔️</span>
           <div>
-            <div class="value-title">Automação</div>
-            <div class="value-desc">Interesse em sistemas que automatizam tarefas, processam eventos e reduzem trabalho manual.</div>
+            <h4 class="value-title" data-i18n="about.values.clean.title">Código Afiado</h4>
+            <p class="value-desc" data-i18n="about.values.clean.desc">Manutenibilidade e performance são inegociáveis. Arquitetura pensada para escalar.</p>
           </div>
         </div>
-
-        <div class="value-item">
-          <div class="value-icon">🧹</div>
+        <div class="value-item slide-up">
+          <span class="value-icon">🏯</span>
           <div>
-            <div class="value-title">Código limpo</div>
-            <div class="value-desc">Organização, legibilidade e manutenção são prioridade. Código bom é aquele que continua fácil de evoluir.</div>
-          </div>
-        </div>
-
-        <div class="value-item">
-          <div class="value-icon">🔐</div>
-          <div>
-            <div class="value-title">Segurança</div>
-            <div class="value-desc">Preocupo-me em construir sistemas seguros, aplicando testes de penetção e boas práticas de desenvolvimento seguro.</div>
-          </div>
-        </div>
-
-        <div class="value-item">
-          <div class="value-icon">📚</div>
-          <div>
-            <div class="value-title">Evolução constante</div>
-            <div class="value-desc">Busco evoluir na prática, construindo projetos reais e aprofundando conhecimentos técnicos continuamente.</div>
+            <h4 class="value-title" data-i18n="about.values.security.title">Fundação Segura</h4>
+            <p class="value-desc" data-i18n="about.values.security.desc">Segurança integrada desde o design inicial, prevenindo vulnerabilidades.</p>
           </div>
         </div>
       </div>
@@ -523,100 +401,38 @@
 
 <div class="section-divider"></div>
 
-<!-- CONTACT -->
+<!-- ═══════════════════ CONTACT ═══════════════════ -->
 <section id="contact">
   <div class="contact-inner">
-    <div class="section-label" style="justify-content:center">05 — Contato</div>
-    <h2 class="section-title" style="text-align:center">Vamos conversar?</h2>
-    <p class="section-subtitle" style="margin:0 auto 0; text-align:center">
-      Estou aberto a oportunidades de emprego, freelance ou apenas uma boa troca de ideia sobre tecnologia.
+    <div class="section-label justify-center fade-in" style="justify-content: center;"><span data-i18n="contact.label">05 — Contato</span></div>
+    <h2 class="section-title fade-in" data-i18n="contact.title">O Próximo Passo</h2>
+    <p class="section-subtitle fade-in" style="margin: 0 auto;" data-i18n="contact.subtitle">
+      Pronto para unir forças e construir algo épico? Minha lâmina está à disposição para novos desafios e oportunidades.
     </p>
-
-    <div class="contact-links">
-      <button class="contact-link" onclick="copyEmail(this)">
-        <span class="contact-link-icon">📋</span>
-        <span class="contact-text">Email</span>
+    
+    <div class="contact-details slide-up">
+      <button class="detail-item" id="copyEmailBtn" type="button">
+        <span class="detail-label" data-i18n="contact.email">Email</span>
+        <span class="detail-value contact-text">edu.patrick.lima@gmail.com</span>
       </button>
-      <a href="https://www.linkedin.com/in/eduardo-trikk" target="_blank" class="contact-link">
-        <span class="contact-link-icon">💼</span>
-        LinkedIn
+      <a href="https://www.linkedin.com/in/eduardo-trikk" target="_blank" rel="noopener" class="detail-item">
+        <span class="detail-label">LinkedIn</span>
+        <span class="detail-value">linkedin.com/in/eduardo-trikk</span>
       </a>
-      <a href="https://github.com/EduardoTrikk" target="_blank" class="contact-link">
-        <span class="contact-link-icon">🐙</span>
-        GitHub
+      <a href="https://github.com/EduardoTrikk" target="_blank" rel="noopener" class="detail-item">
+        <span class="detail-label">GitHub</span>
+        <span class="detail-value">github.com/EduardoTrikk</span>
       </a>
     </div>
   </div>
 </section>
 
 <footer>
-  Feito com cuidado · <span>Eduardo Patrick</span> · Engenharia de Software
+  <span data-i18n-html="footer.text">Forjado com dedicação por <span>Eduardo Patrick</span></span>
 </footer>
 
-<script>
-function copyEmail(button) {
-  const email = "edu.patrick.lima@gmail.com";
-  const textElement = button.querySelector(".contact-text");
-  const originalText = "Email";
-
-  navigator.clipboard.writeText(email)
-    .then(() => {
-      // Sucesso
-      textElement.innerText = "Copiado! ✓";
-      button.style.opacity = "0.7";
-      
-      setTimeout(() => {
-        textElement.innerText = originalText;
-        button.style.opacity = "1";
-      }, 2000);
-    })
-    .catch((error) => {
-      // Fallback em caso de erro
-      console.error("Erro ao copiar email:", error);
-      textElement.innerText = "Erro ao copiar";
-      button.style.opacity = "0.7";
-      
-      setTimeout(() => {
-        textElement.innerText = originalText;
-        button.style.opacity = "1";
-      }, 2000);
-    });
-}
-</script>
-
-<script>
-  // Intersection Observer for fade-in animations
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => {
-          entry.target.classList.add('visible');
-        }, entry.target.dataset.delay || 0);
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12 });
-
-  document.querySelectorAll('.fade-in').forEach((el, i) => {
-    el.dataset.delay = (i % 4) * 100;
-    observer.observe(el);
-  });
-
-  // Nav active state
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-links a');
-
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 120;
-      if (window.scrollY >= sectionTop) current = section.getAttribute('id');
-    });
-    navLinks.forEach(a => {
-      a.style.color = a.getAttribute('href') === `#${current}` ? 'var(--gold-light)' : '';
-    });
-  });
-</script>
+<script src="translations.js"></script>
+<script src="main.js"></script>
 
 </body>
 </html>
