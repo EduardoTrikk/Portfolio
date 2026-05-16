@@ -158,7 +158,7 @@
     let particles = [];
     let currentMold = 0;
     const isMobile = window.innerWidth < 768;
-    const numParticles = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 800 : (isMobile ? 2500 : 6000);
+    const numParticles = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 800 : (isMobile ? 2000 : 6000);
 
     // Helper to extract pixels
     function extractPixels(imgOrText, isText = false, offsetX = 0.5, offsetY = 0.5, scale = 0.8) {
@@ -244,8 +244,8 @@
           vx: 0, vy: 0,
           transitionDelay: 0,
           color: Math.random() > 0.8 ? '#ff4444' : (Math.random() > 0.5 ? '#1a1a1a' : '#333'),
-          size: isMobile ? Math.random() * 1.2 + 0.6 : Math.random() * 2 + 1,
-          ease: isMobile ? Math.random() * 0.01 + 0.005 : Math.random() * 0.08 + 0.04
+          size: isMobile ? Math.random() * 1.5 + 0.8 : Math.random() * 2 + 1,
+          ease: isMobile ? Math.random() * 0.02 + 0.035 : Math.random() * 0.08 + 0.04
         });
       }
       render();
@@ -263,8 +263,8 @@
           p.transitionDelay--;
           p.x += p.vx;
           p.y += p.vy;
-          p.vx *= 0.88; // Fricção super alta
-          p.vy *= 0.88;
+          p.vx *= isMobile ? 0.95 : 0.88; // More sliding on mobile for larger dispersion
+          p.vy *= isMobile ? 0.95 : 0.88;
         } else {
           // Fase de contração (Reverse): se une diretamente ao alvo sem quicar
           p.x += (p.tx - p.x) * p.ease;
@@ -289,9 +289,13 @@
       loadMolds(); // Re-extract to adjust to new screen size
     });
 
-    // Update mold based on scroll
+    // Update mold based on scroll with throttle
+    let lastTransitionTime = 0;
+    const TRANSITION_THROTTLE = 800; // ms
+
     window.addEventListener('scroll', () => {
       if (!molds[0].length) return;
+      const now = Date.now();
       const scrollY = window.scrollY;
       const sections = document.querySelectorAll("section[id]");
       let activeIndex = 0;
@@ -303,32 +307,29 @@
       });
 
       // Map sections to molds
-      // 0: Hero -> Kanji
-      // 1: Projects -> Kneeling
-      // 2: Skills & 3: Education -> Standing
-      // 4: About & 5: Contact -> Striking
-
       let targetMoldIdx = 0;
-      // Determine which mold (samurai) to show based on active section
       if (activeIndex === 1) {
-        targetMoldIdx = 1; // Projects -> kneeling (right side)
+        targetMoldIdx = 1; // Projects -> kneeling
       } else if (activeIndex === 2 || activeIndex === 3) {
-        targetMoldIdx = 2; // Skills & Education -> standing (left side)
+        targetMoldIdx = 2; // Skills & Education -> standing
       } else if (activeIndex >= 4) {
-        targetMoldIdx = 3; // About & Contact -> striking (right side)
+        targetMoldIdx = 3; // About & Contact -> striking
       }
 
-      if (targetMoldIdx !== currentMold && molds[targetMoldIdx] && molds[targetMoldIdx].length > 0) {
-        currentMold = targetMoldIdx;
-        const targetMold = molds[currentMold];
+    if (targetMoldIdx !== currentMold && molds[targetMoldIdx] && molds[targetMoldIdx].length > 0) {
+      if (now - lastTransitionTime < TRANSITION_THROTTLE) return; // Prevent rapid triggers
+      
+      lastTransitionTime = now;
+      currentMold = targetMoldIdx;
+      const targetMold = molds[currentMold];
 
         particles.forEach(p => {
           // Explosão omnidirecional
           const angle = Math.random() * Math.PI * 2;
-          const force = isMobile ? (Math.random() * 2 + 1) : (Math.random() * 30 + 15);
+          const force = isMobile ? (Math.random() * 12 + 8) : (Math.random() * 30 + 15);
           p.vx = Math.cos(angle) * force;
           p.vy = Math.sin(angle) * force;
-          p.transitionDelay = isMobile ? Math.floor(Math.random() * 200 + 150) : Math.floor(Math.random() * 40 + 30); // Espera N frames em slow motion
+          p.transitionDelay = isMobile ? Math.floor(Math.random() * 40 + 20) : Math.floor(Math.random() * 40 + 30); // Espera N frames em slow motion
 
           const target = targetMold[Math.floor(Math.random() * targetMold.length)];
           p.tx = target.x;

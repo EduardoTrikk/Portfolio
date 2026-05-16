@@ -212,7 +212,7 @@ nav.scrolled {
 @media (max-width: 768px) {
   #hero {
     align-items: flex-start;
-    padding-top: 140px;
+    padding-top: 160px;
     padding-bottom: 60px;
     height: auto;
   }
@@ -618,7 +618,7 @@ footer span span { color: var(--crimson); }
   .nav-toggle { display: block; }
 
   .hero-name { font-size: clamp(3rem, 12vw, 4.5rem); line-height: 1.1; }
-  .hero-badge { margin-bottom: 2rem; padding: 0.4rem 1.2rem; font-size: 0.7rem; letter-spacing: 2px; }
+  .hero-badge { margin-bottom: 4.5rem; padding: 0.4rem 1.2rem; font-size: 0.7rem; letter-spacing: 2px; }
   .hero-desc { font-size: 1.1rem; margin-bottom: 2.5rem; }
   .hero-cta { flex-direction: column; width: 100%; gap: 1rem; }
   .btn-primary, .btn-ghost { width: 100%; padding: 1.2rem; }
