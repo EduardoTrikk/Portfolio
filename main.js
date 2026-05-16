@@ -41,12 +41,12 @@
     toggles.forEach((btn) => {
       btn.setAttribute("aria-label", lang === "en" ? "Switch language to Portuguese" : "Trocar idioma para inglês");
       btn.dataset.lang = lang;
-      
+
       // Update the active state of the toggle
       const ptSpan = btn.querySelector('.lang-opt:nth-child(1)');
       const enSpan = btn.querySelector('.lang-opt:nth-child(3)');
-      if(ptSpan && enSpan) {
-        if(lang === 'pt') {
+      if (ptSpan && enSpan) {
+        if (lang === 'pt') {
           ptSpan.classList.add('active');
           enSpan.classList.remove('active');
         } else {
@@ -157,13 +157,14 @@
     const molds = [[], [], [], []]; // 0: Kanji, 1: Kneeling, 2: Standing, 3: Striking
     let particles = [];
     let currentMold = 0;
-    const numParticles = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 800 : 6000;
+    const isMobile = window.innerWidth < 768;
+    const numParticles = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 800 : (isMobile ? 2500 : 6000);
 
     // Helper to extract pixels
     function extractPixels(imgOrText, isText = false, offsetX = 0.5, offsetY = 0.5, scale = 0.8) {
       const oc = document.createElement('canvas');
       const octx = oc.getContext('2d', { willReadFrequently: true });
-      const size = Math.min(width, height) * scale; 
+      const size = Math.min(width, height) * scale;
       oc.width = width;
       oc.height = height;
 
@@ -226,13 +227,13 @@
           img.onerror = resolve; // Skip if missing
         });
       }
-      
+
       initParticles();
     }
 
     function initParticles() {
       particles = [];
-      const baseMold = molds[0].length ? molds[0] : [{x: width/2, y: height/2}];
+      const baseMold = molds[0].length ? molds[0] : [{ x: width / 2, y: height / 2 }];
       for (let i = 0; i < numParticles; i++) {
         const target = baseMold[Math.floor(Math.random() * baseMold.length)];
         particles.push({
@@ -243,8 +244,8 @@
           vx: 0, vy: 0,
           transitionDelay: 0,
           color: Math.random() > 0.8 ? '#ff4444' : (Math.random() > 0.5 ? '#1a1a1a' : '#333'),
-          size: Math.random() * 2 + 1,
-          ease: Math.random() * 0.08 + 0.04
+          size: isMobile ? Math.random() * 1.2 + 0.6 : Math.random() * 2 + 1,
+          ease: isMobile ? Math.random() * 0.01 + 0.005 : Math.random() * 0.08 + 0.04
         });
       }
       render();
@@ -252,7 +253,7 @@
 
     function render() {
       ctx.clearRect(0, 0, width, height);
-      
+
       particles.forEach(p => {
         const noiseX = Math.sin(Date.now() * 0.001 + p.y * 0.01) * 0.5;
         const noiseY = Math.cos(Date.now() * 0.002 + p.x * 0.01) * 0.5;
@@ -290,7 +291,7 @@
 
     // Update mold based on scroll
     window.addEventListener('scroll', () => {
-      if(!molds[0].length) return;
+      if (!molds[0].length) return;
       const scrollY = window.scrollY;
       const sections = document.querySelectorAll("section[id]");
       let activeIndex = 0;
@@ -301,34 +302,34 @@
         }
       });
 
-    // Map sections to molds
-    // 0: Hero -> Kanji
-    // 1: Projects -> Kneeling
-    // 2: Skills & 3: Education -> Standing
-    // 4: About & 5: Contact -> Striking
-    
-    let targetMoldIdx = 0;
-    // Determine which mold (samurai) to show based on active section
-    if (activeIndex === 1) {
-      targetMoldIdx = 1; // Projects -> kneeling (right side)
-    } else if (activeIndex === 2 || activeIndex === 3) {
-      targetMoldIdx = 2; // Skills & Education -> standing (left side)
-    } else if (activeIndex >= 4) {
-      targetMoldIdx = 3; // About & Contact -> striking (right side)
-    }
+      // Map sections to molds
+      // 0: Hero -> Kanji
+      // 1: Projects -> Kneeling
+      // 2: Skills & 3: Education -> Standing
+      // 4: About & 5: Contact -> Striking
+
+      let targetMoldIdx = 0;
+      // Determine which mold (samurai) to show based on active section
+      if (activeIndex === 1) {
+        targetMoldIdx = 1; // Projects -> kneeling (right side)
+      } else if (activeIndex === 2 || activeIndex === 3) {
+        targetMoldIdx = 2; // Skills & Education -> standing (left side)
+      } else if (activeIndex >= 4) {
+        targetMoldIdx = 3; // About & Contact -> striking (right side)
+      }
 
       if (targetMoldIdx !== currentMold && molds[targetMoldIdx] && molds[targetMoldIdx].length > 0) {
         currentMold = targetMoldIdx;
         const targetMold = molds[currentMold];
-        
+
         particles.forEach(p => {
           // Explosão omnidirecional
           const angle = Math.random() * Math.PI * 2;
-          const force = Math.random() * 30 + 15;
+          const force = isMobile ? (Math.random() * 2 + 1) : (Math.random() * 30 + 15);
           p.vx = Math.cos(angle) * force;
           p.vy = Math.sin(angle) * force;
-          p.transitionDelay = Math.floor(Math.random() * 40 + 30); // Espera N frames em slow motion
-          
+          p.transitionDelay = isMobile ? Math.floor(Math.random() * 200 + 150) : Math.floor(Math.random() * 40 + 30); // Espera N frames em slow motion
+
           const target = targetMold[Math.floor(Math.random() * targetMold.length)];
           p.tx = target.x;
           p.ty = target.y;
@@ -384,7 +385,7 @@
 
     window.addEventListener("scroll", () => {
       const scrollY = window.scrollY;
-      
+
       // Nav shrink
       if (nav) {
         if (scrollY > 50) nav.classList.add("scrolled");
@@ -407,7 +408,7 @@
   function setupMobileNav() {
     const toggle = document.getElementById("navToggle");
     const mobileNav = document.getElementById("navMobile");
-    if(!toggle || !mobileNav) return;
+    if (!toggle || !mobileNav) return;
 
     toggle.addEventListener("click", () => {
       const isHidden = mobileNav.hidden;
@@ -416,7 +417,7 @@
     });
 
     mobileNav.addEventListener("click", (e) => {
-      if(e.target.tagName === 'A') {
+      if (e.target.tagName === 'A') {
         mobileNav.hidden = true;
         toggle.classList.remove("active");
       }
@@ -453,7 +454,7 @@
   const initialLang = getCurrentLang();
   applyTranslations(initialLang);
   updateLangToggleUI(initialLang);
-  
+
   const toggles = [document.getElementById("langToggle"), document.getElementById("langToggleMobile")].filter(Boolean);
   toggles.forEach(btn => {
     btn.addEventListener("click", () => {
@@ -472,7 +473,7 @@
 
   // Trigger scroll event once to set initial state
   window.dispatchEvent(new Event('scroll'));
-  
+
   // Reveal body after load
   document.body.classList.add('loaded');
 })();
