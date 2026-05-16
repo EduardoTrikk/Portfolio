@@ -14,7 +14,7 @@ window.translations = {
       badge: "Disponível para oportunidades",
       title: "Automação • Desenvolvimento Web • Segurança",
       desc:
-        "Desenvolvedor web focado em automação e desenvolvimento seguro, construindo aplicações web modernas com ênfase em produtividade e experiência do usuário. Como um samurai afiando sua espada, busco a maestria em cada linha de código.",
+        "Desenvolvedor web focado em automação e desenvolvimento seguro, construindo aplicações web modernas com ênfase em produtividade ágil e segura voltadas para a experiência do usuário.",
       ctaProjects: "Ver Projetos →",
       ctaContact: "Entrar em contato",
       code: `
@@ -254,7 +254,7 @@ window.translations = {
       badge: "Open to opportunities",
       title: "Automation • Web Development • Security",
       desc:
-        "Web developer focused on automation and secure development, building modern web applications with an emphasis on productivity and user experience. Like a samurai sharpening his sword, I seek mastery in every line of code.",
+        "Web developer focused on automation and secure development, building modern web applications with an emphasis on productivity and user experience.",
       ctaProjects: "View Projects →",
       ctaContact: "Get in touch",
       code: `
