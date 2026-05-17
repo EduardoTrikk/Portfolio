@@ -476,6 +476,22 @@
     });
   }
 
+  // --- Scroll Progress Bar ---
+  function setupScrollProgress() {
+    let progressBar = document.querySelector('.scroll-progress');
+    if (!progressBar) {
+      progressBar = document.createElement('div');
+      progressBar.className = 'scroll-progress';
+      document.body.insertBefore(progressBar, document.body.firstChild);
+    }
+
+    window.addEventListener('scroll', () => {
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrolled = (window.scrollY / scrollHeight) * 100;
+      progressBar.style.width = Math.min(scrolled, 100) + '%';
+    }, { passive: true });
+  }
+
   // --- Boot ---
   const initialLang = getCurrentLang();
   applyTranslations(initialLang);
@@ -492,6 +508,7 @@
   setupMobileNav();
   setupScroll();
   setupFadeIn();
+  setupScrollProgress();
   initLayoutPositions();
   try { initMorphEngine(); } catch (e) { console.error('Morph engine init error:', e); }
   initSakura();
