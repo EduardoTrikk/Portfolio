@@ -71,7 +71,8 @@
     let targetWindY = 0;
 
     const particles = [];
-    const particleCount = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 20 : 80;
+    const isMobileScreen = window.innerWidth < 768;
+    const particleCount = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 20 : (isMobileScreen ? 35 : 80);
 
     for (let i = 0; i < particleCount; i++) {
       particles.push({
@@ -150,6 +151,13 @@
   function initMorphEngine() {
     const canvas = document.getElementById('morphCanvas');
     if (!canvas) return;
+
+    // Disable on mobile: canvas particle engine is too heavy for small screens
+    if (window.innerWidth < 768) {
+      canvas.style.display = 'none';
+      return;
+    }
+
     const ctx = canvas.getContext('2d', { willReadFrequently: true });
     let width = canvas.width = window.innerWidth;
     let height = canvas.height = window.innerHeight;
@@ -253,20 +261,24 @@
 
     function render() {
       ctx.clearRect(0, 0, width, height);
+      const t = Date.now();
+
+      // Batch draws by color to cut canvas state changes from 6000 → 3
+      const pCrimson = new Path2D();
+      const pDark    = new Path2D();
+      const pGray    = new Path2D();
 
       particles.forEach(p => {
-        const noiseX = Math.sin(Date.now() * 0.001 + p.y * 0.01) * 0.5;
-        const noiseY = Math.cos(Date.now() * 0.002 + p.x * 0.01) * 0.5;
+        const noiseX = Math.sin(t * 0.001 + p.y * 0.01) * 0.5;
+        const noiseY = Math.cos(t * 0.002 + p.x * 0.01) * 0.5;
 
         if (p.transitionDelay > 0) {
-          // Fase de dispersão: afasta explosivamente e perde força rapidamente
           p.transitionDelay--;
           p.x += p.vx;
           p.y += p.vy;
-          p.vx *= isMobile ? 0.95 : 0.88; // More sliding on mobile for larger dispersion
-          p.vy *= isMobile ? 0.95 : 0.88;
+          p.vx *= 0.88;
+          p.vy *= 0.88;
         } else {
-          // Fase de contração (Reverse): se une diretamente ao alvo sem quicar
           p.x += (p.tx - p.x) * p.ease;
           p.y += (p.ty - p.y) * p.ease;
         }
@@ -274,19 +286,32 @@
         p.x += noiseX;
         p.y += noiseY;
 
-        ctx.fillStyle = p.color;
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fill();
+        const path = p.color === '#ff4444' ? pCrimson : (p.color === '#1a1a1a' ? pDark : pGray);
+        path.moveTo(p.x + p.size, p.y);
+        path.arc(p.x, p.y, p.size, 0, Math.PI * 2);
       });
+
+      ctx.fillStyle = '#ff4444'; ctx.fill(pCrimson);
+      ctx.fillStyle = '#1a1a1a'; ctx.fill(pDark);
+      ctx.fillStyle = '#333';    ctx.fill(pGray);
 
       requestAnimationFrame(render);
     }
 
+    let resizeTimer;
     window.addEventListener('resize', () => {
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
-      loadMolds(); // Re-extract to adjust to new screen size
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        // If resized to mobile range, hide and stop
+        if (window.innerWidth < 768) {
+          canvas.style.display = 'none';
+          return;
+        }
+        canvas.style.display = '';
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+        loadMolds();
+      }, 300);
     });
 
     // Update mold based on scroll with throttle
