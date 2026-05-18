@@ -9,6 +9,7 @@ window.translations = {
       education: "Formação",
       about: "Sobre",
       contact: "Contato",
+      resume: "Baixar currículo",
     },
     hero: {
       badge: "Disponível para oportunidades",
@@ -249,6 +250,7 @@ window.translations = {
       education: "Education",
       about: "About",
       contact: "Contact",
+      resume: "Download resume",
     },
     hero: {
       badge: "Open to opportunities",

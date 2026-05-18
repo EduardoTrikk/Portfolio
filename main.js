@@ -19,6 +19,7 @@
     document.documentElement.setAttribute("lang", lang === "en" ? "en" : "pt-BR");
     applyTranslations(lang);
     updateLangToggleUI(lang);
+    updateResumeLinks(lang);
   }
 
   function applyTranslations(lang) {
@@ -54,6 +55,20 @@
           ptSpan.classList.remove('active');
         }
       }
+    });
+  }
+
+  function updateResumeLinks(lang) {
+    const href =
+      lang === "en" ? "assets/Eduardo_Patrick_Resume.pdf" : "assets/Currículo_Eduardo_Patrick.pdf";
+    const filename =
+      lang === "en" ? "Eduardo_Patrick_Resume.pdf" : "Currículo_Eduardo_Patrick.pdf";
+
+    const links = [document.getElementById("resumeDownload"), document.getElementById("resumeDownloadMobile")].filter(Boolean);
+    links.forEach((a) => {
+      a.setAttribute("href", encodeURI(href));
+      a.setAttribute("download", filename);
+      a.setAttribute("aria-label", lang === "en" ? "Download resume (PDF)" : "Baixar currículo (PDF)");
     });
   }
 
@@ -455,6 +470,7 @@
   const initialLang = getCurrentLang();
   applyTranslations(initialLang);
   updateLangToggleUI(initialLang);
+  updateResumeLinks(initialLang);
 
   const toggles = [document.getElementById("langToggle"), document.getElementById("langToggleMobile")].filter(Boolean);
   toggles.forEach(btn => {

@@ -166,6 +166,30 @@ nav.scrolled {
 .lang-opt.active { color: var(--accent); font-weight: 600; }
 .lang-sep { opacity: 0.3; }
 
+.resume-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 68, 68, 0.08);
+  border: 1px solid var(--border-accent);
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-sm);
+  color: var(--text-main);
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+.resume-btn:hover { border-color: var(--accent); color: var(--accent); background: rgba(255, 68, 68, 0.12); }
+.nav-mobile .resume-btn {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: var(--radius-sm);
+}
+
 .nav-toggle {
   display: none;
   background: none; border: none;
