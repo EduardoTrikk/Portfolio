@@ -18,24 +18,6 @@ window.translations = {
         "Desenvolvedor web focado em automação e desenvolvimento seguro, construindo aplicações web modernas com ênfase em produtividade ágil e segura voltadas para a experiência do usuário.",
       ctaProjects: "Ver Projetos →",
       ctaContact: "Entrar em contato",
-      code: `
-          <div class="code-dim">// dev.profile.js</div>
-          <br>
-          <div><span class="code-key">const</span> <span class="code-gold">dev</span> = {</div>
-          <div>&nbsp;&nbsp;<span class="code-key">nome</span>: <span class="code-str">"Eduardo Patrick"</span>,</div>
-          <div>&nbsp;&nbsp;<span class="code-key">role</span>: <span class="code-str">"Full Stack Developer"</span>,</div>
-          <div>&nbsp;&nbsp;<span class="code-key">foco</span>: <span class="code-str">"Web Development"</span>,</div>
-          <div>&nbsp;&nbsp;<span class="code-key">principaisTecnologias</span>: [<span class="code-str">"JavaScript"</span>, <span class="code-str">"React"</span>, <span class="code-str">"Node.js"</span>, <span class="code-str">"Python"</span>],</div>
-          <div>&nbsp;&nbsp;<span class="code-key">diferencial</span>: <span class="code-str">"Desenvolvimento de projetos reais com foco em solução de problemas"</span>,</div>
-          <div>&nbsp;&nbsp;<span class="code-key">status</span>: <span class="code-gold">"Disponível para oportunidades"</span>,</div>
-          <div>};</div>
-      `.trim(),
-      stats: {
-        years: "Anos de estudo",
-        tech: "Tecnologias",
-        projects: "Projetos reais",
-        curiosity: "Curiosidade",
-      },
     },
     projects: {
       label: "01 — Projetos",
@@ -259,24 +241,6 @@ window.translations = {
         "Web developer focused on automation and secure development, building modern web applications with an emphasis on productivity and user experience.",
       ctaProjects: "View Projects →",
       ctaContact: "Get in touch",
-      code: `
-          <div class="code-dim">// dev.profile.js</div>
-          <br>
-          <div><span class="code-key">const</span> <span class="code-gold">dev</span> = {</div>
-          <div>&nbsp;&nbsp;<span class="code-key">name</span>: <span class="code-str">"Eduardo Patrick"</span>,</div>
-          <div>&nbsp;&nbsp;<span class="code-key">role</span>: <span class="code-str">"Full Stack Developer"</span>,</div>
-          <div>&nbsp;&nbsp;<span class="code-key">focus</span>: <span class="code-str">"Web development"</span>,</div>
-          <div>&nbsp;&nbsp;<span class="code-key">coreTech</span>: [<span class="code-str">"JavaScript"</span>, <span class="code-str">"React"</span>, <span class="code-str">"Node.js"</span>, <span class="code-str">"Python"</span>],</div>
-          <div>&nbsp;&nbsp;<span class="code-key">edge</span>: <span class="code-str">"Building real projects with problem-solving focus"</span>,</div>
-          <div>&nbsp;&nbsp;<span class="code-key">status</span>: <span class="code-gold">"Open to opportunities"</span>,</div>
-          <div>};</div>
-      `.trim(),
-      stats: {
-        years: "Years of study",
-        tech: "Technologies",
-        projects: "Real projects",
-        curiosity: "Curiosity",
-      },
     },
     projects: {
       label: "01 — Projects",
