@@ -1,8 +1,6 @@
 # 👨‍💻 Eduardo Patrick — Dev Portfolio
 
-Um portfólio web moderno e minimalista de um engenheiro de software especializado em desenvolvimento web.
-
-![Portfolio Preview](https://img.shields.io/badge/Status-Online-success?style=flat-square) ![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)
+Um portfólio web moderno e minimalista.
 
 ---
 
@@ -13,7 +11,6 @@ Um portfólio web moderno e minimalista de um engenheiro de software especializa
 - ⚡ **Otimizado** — Carregamento rápido e performance excepcional
 - 🌙 **Dark Mode** — Interface escura pensada para conforto visual
 - 🎯 **UX Focada** — Experiência de usuário intuitiva e acessível
-- 📧 **Interativo** — Botão de cópia de email com feedback visual
 
 ---
 
@@ -22,18 +19,7 @@ Um portfólio web moderno e minimalista de um engenheiro de software especializa
 - **HTML5** — Semântica e estrutura
 - **CSS3** — Animações, variáveis CSS e design responsivo
 - **JavaScript** — Interatividade e funcionalidades dinâmicas
-- **Fontes** — DM Serif Display, DM Mono, Outfit (Google Fonts)
-
----
-
-## 📂 Estrutura do Projeto
-
-```
-Portfolio/
-├── portfolio.html      # Página principal
-├── styles.css          # Estilos e animações
-└── README.md           # Este arquivo
-```
+- **Fontes** — Cinzel, Noto Serif JP, Manrope (Google Fonts)
 
 ---
 
@@ -56,19 +42,6 @@ Informações pessoais e profissionais.
 
 ### 6. **Contato**
 Links para redes sociais e opção de cópia de email com um clique.
-
----
-
-## 💻 Principais Funcionalidades
-
-### Botão de Copiar Email
-Clique no botão "Copiar Email" para copiar automaticamente para a área de transferência com feedback visual.
-
-### Navegação Suave
-Navegação com scroll suave entre as seções da página.
-
-### Responsividade
-Layout adaptável que se ajusta perfeitamente a qualquer tamanho de tela.
 
 ---
 
