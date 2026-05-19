@@ -475,7 +475,7 @@ nav.scrolled {
 .project-card {
   will-change: transform, opacity;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 20rem;
+  grid-template-columns: minmax(0, 1fr) 320px;
   background: linear-gradient(135deg, var(--bg-panel) 0%, rgba(20,20,20,0.5) 100%);
   border: 1px solid var(--border-accent);
   border-radius: var(--radius-lg);
@@ -838,19 +838,8 @@ footer span span { color: var(--crimson); }
 }
 
 /* ── ULTRA-WIDE, 2K & 4K+ SCREENS ── */
-@media (min-width: 1800px) {
-  html {
-    font-size: 18px; /* Redimensiona proporcionalmente todo o espaçamento base em rem */
-  }
-  .section-inner {
-    max-width: 1400px;
-  }
-  .hero-content {
-    max-width: 950px;
-  }
-}
 
-@media (min-width: 2200px) {
+@media (min-width: 2000px) {
   html {
     font-size: 20px; /* Expansão adicional para telas QHD / 2K típicas */
   }
