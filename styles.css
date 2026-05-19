@@ -475,7 +475,7 @@ nav.scrolled {
 .project-card {
   will-change: transform, opacity;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 320px;
+  grid-template-columns: minmax(0, 1fr) 20rem;
   background: linear-gradient(135deg, var(--bg-panel) 0%, rgba(20,20,20,0.5) 100%);
   border: 1px solid var(--border-accent);
   border-radius: var(--radius-lg);
@@ -747,14 +747,16 @@ footer span span { color: var(--crimson); }
   .project-side { border-left: none; border-top: 1px solid var(--border-subtle); }
   .about-grid { grid-template-columns: 1fr; }
 }
-@media (max-width: 768px) {
+@media (max-width: 1120px) {
   nav { padding: 1rem 1.5rem; }
   nav.scrolled { padding: 0.8rem 1.5rem; }
   .logo-text { font-size: 1rem; letter-spacing: 2px; }
 
   .nav-right { display: none; }
   .nav-toggle { display: block; }
+}
 
+@media (max-width: 768px) {
   #hero { padding-left: 1.5rem; padding-right: 1.5rem; }
   .hero-name { font-size: clamp(3rem, 11vw, 4.5rem); line-height: 1.1; }
   .hero-badge { margin-bottom: 2rem; padding: 0.4rem 1.2rem; font-size: 0.7rem; letter-spacing: 2px; }
@@ -833,4 +835,41 @@ footer span span { color: var(--crimson); }
   .project-side { padding: 1.25rem 1rem; }
   .contact-inner { padding: 2.5rem 0.875rem; }
   .value-item { padding: 1.25rem; gap: 1rem; }
+}
+
+/* ── ULTRA-WIDE, 2K & 4K+ SCREENS ── */
+@media (min-width: 1800px) {
+  html {
+    font-size: 18px; /* Redimensiona proporcionalmente todo o espaçamento base em rem */
+  }
+  .section-inner {
+    max-width: 1400px;
+  }
+  .hero-content {
+    max-width: 950px;
+  }
+}
+
+@media (min-width: 2200px) {
+  html {
+    font-size: 20px; /* Expansão adicional para telas QHD / 2K típicas */
+  }
+  .section-inner {
+    max-width: 1600px;
+  }
+  .hero-content {
+    max-width: 1100px;
+  }
+}
+
+@media (min-width: 3200px) {
+  html {
+    font-size: 24px; /* Expansão completa para monitores 4K / UHD gigantes */
+  }
+  .section-inner {
+    max-width: 2000px;
+  }
+  .hero-content {
+    max-width: 1400px;
+  }
 }
