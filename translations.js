@@ -21,7 +21,7 @@ window.translations = {
     },
     projects: {
       label: "01 — Projetos",
-      title: "O que eu construí",
+      title: "Projetos Desenvolvidos",
       subtitle:
         "Projetos desenvolvidos com foco em solução real de problemas, boas práticas de engenharia e entrega de valor ao usuário final.",
       problem: "O Problema",
@@ -43,12 +43,12 @@ window.translations = {
       },
       p2: {
         number: "Projeto 02",
-        title: "Copiloto de WhatsApp para Pequenos Negócios",
-        role: "Full Stack · SaaS · Automação com Voz · Projeto Independente",
+        title: "Assistente de WhatsApp",
+        role: "Desenvolvimento Independente · IA · Voz",
         problem:
           "Pequenos negócios que utilizam o WhatsApp como principal canal de vendas enfrentam sobrecarga operacional: precisam responder mensagens manualmente, organizar pedidos, gerenciar agendamentos e lembrar tarefas, tudo ao mesmo tempo. Isso reduz a produtividade e causa perda de oportunidades.",
         solution:
-          "Desenvolvimento de um copiloto inteligente para WhatsApp que automatiza o atendimento com foco em produtividade. O sistema lê mensagens em voz alta, permite respostas por comando de voz, cria lembretes automaticamente e organiza agendamentos e pedidos, reduzindo a necessidade de interação manual constante.",
+          "Desenvolvimento de um assistente inteligente para WhatsApp que automatiza o atendimento com foco em produtividade. O sistema lê mensagens em voz alta, permite respostas por comando de voz, cria lembretes automaticamente e organiza agendamentos e pedidos, reduzindo a necessidade de interação manual constante.",
         myRole:
           "Idealização do produto, planejamento, organização e desenvolvimento. Arquitetura do sistema, modelagem do banco de dados, construção da API, integração com WhatsApp e implementação dos módulos de voz (speech-to-text e text-to-speech), além do planejamento de escalabilidade da plataforma.",
         highlight:
@@ -244,7 +244,7 @@ window.translations = {
     },
     projects: {
       label: "01 — Projects",
-      title: "Solutions Built",
+      title: "Developed Projects",
       subtitle:
         "Projects built with a real problem-solving mindset, strong engineering practices, and a focus on delivering value.",
       problem: "Problem",
@@ -266,12 +266,12 @@ window.translations = {
       },
       p2: {
         number: "Project 02",
-        title: "WhatsApp Copilot · Automation SaaS",
-        role: "Full Stack · SaaS · Voice automation · Independent project",
+        title: "WhatsApp Assistant",
+        role: "Independent development · AI · Voice",
         problem:
           "Small businesses using WhatsApp as their main sales channel face operational overload: manual replies, order organization, scheduling, and reminders—all at once. This reduces productivity and leads to missed opportunities.",
         solution:
-          "Built an intelligent WhatsApp copilot that automates customer interactions with a productivity focus. It reads messages out loud, enables voice-command replies, creates reminders automatically, and organizes schedules and orders—reducing constant manual interaction.",
+          "Built an intelligent WhatsApp Assistant that converses with you, reads messages out loud, enables voice-command replies, creates reminders automatically, and organizes schedules and orders—reducing constant manual interaction.",
         myRole:
           "Product ideation, planning, and implementation: system architecture, database modeling, API building, WhatsApp integration, and voice modules (speech-to-text and text-to-speech), plus scalability planning.",
         highlight:
