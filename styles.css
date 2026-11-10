@@ -499,6 +499,23 @@ nav.scrolled {
 }
 .project-card:hover::before { transform: scaleY(1); }
 
+.project-card-featured {
+  border-color: rgba(255, 68, 68, 0.45);
+  box-shadow: inset 0 0 35px rgba(255, 68, 68, 0.04);
+}
+.project-card-featured::after {
+  content: 'LIVE';
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  padding: 0.25rem 0.65rem;
+  border: 1px solid var(--crimson);
+  border-radius: 999px;
+  color: var(--crimson-light);
+  font: 600 0.7rem/1 var(--font-sans);
+  letter-spacing: 2px;
+}
+
 .project-main { padding: 3rem; }
 .project-number {
   font-family: var(--font-serif); font-size: 1.5rem; color: var(--accent-dim); margin-bottom: 1rem;

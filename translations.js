@@ -29,7 +29,7 @@ window.translations = {
       roleLabel: "Meu papel",
       tech: "Tecnologias",
       p1: {
-        number: "Projeto 01",
+        number: "Projeto 02",
         title: "Brotar+ · App para Comerciantes",
         role: "TCC · Mobile · UX/UI",
         problem:
@@ -42,7 +42,7 @@ window.translations = {
           "<strong>📊 Resultados:</strong> Protótipo validado com usuários reais, considerado intuitivo e útil, com alta intenção de uso e potencial para ampliar vendas e alcance digital dos comerciantes.",
       },
       p2: {
-        number: "Projeto 02",
+        number: "Projeto 03",
         title: "Assistente de WhatsApp",
         role: "Desenvolvimento Independente · IA · Voz",
         problem:
@@ -55,7 +55,7 @@ window.translations = {
           "<strong>⚡ Diferencial:</strong> Sistema orientado a voz que reduz interação manual, permitindo que o usuário opere o atendimento sem precisar tocar no celular constantemente.",
       },
       p3: {
-        number: "Projeto 03",
+        number: "Projeto 04",
         title: "Climatic Adventure: Jogo Educativo sobre Mudanças Climáticas",
         role: "Game Dev · Projeto Acadêmico · Hackathon NASA",
         problem:
@@ -67,18 +67,18 @@ window.translations = {
         highlight:
           "<strong>🌍 Impacto:</strong> 89,5% dos participantes relataram aprendizado sobre mudanças climáticas e 84,2% reconheceram o potencial do jogo para conscientização ambiental.",
       },
-      p4: {
-        number: "Projeto 04",
-        title: "Automação de Afiliados com n8n",
-        role: "Engenharia de Automação · Web Scraping · n8n",
+      p5: {
+        number: "Projeto 01",
+        title: "Gestão Benedito Chaves",
+        role: "Sistema web em produção · Django · DevSecOps",
         problem:
-          "Encontrar e divulgar manualmente ofertas e produtos de afiliados consome muito tempo e não é escalável, resultando em perda de oportunidades de comissionamento diário.",
+          "Uma operação de assistência precisava centralizar clientes, contratos, cobranças, cupons e documentos com rastreabilidade e controle de acesso.",
         solution:
-          "Desenvolvimento de um pipeline de dados automatizado usando n8n que rastreia plataformas de afiliados, identifica as melhores ofertas com base em critérios de conversão e publica os links automaticamente em canais de divulgação (Telegram/WhatsApp).",
+          "Construí e coloquei em produção uma plataforma web completa, com perfis de acesso, MFA, carência configurável, histórico operacional separado da auditoria administrativa e gestão personalizável de cupons.",
         myRole:
-          "Criação do fluxo visual no n8n, integração via API com plataformas de produtos, manipulação de dados em JSON/JavaScript e configuração de webhooks para disparos automáticos nos canais de mensagem.",
+          "Atuei de ponta a ponta: arquitetura Django/PostgreSQL, regras de negócio, interface, testes, hardening da VPS, Nginx/HTTPS, R2, backups com checksum, ensaios de restauração e documentação operacional.",
         highlight:
-          "<strong>⚙️ Eficiência:</strong> Fluxo 100% automatizado que trabalha 24/7, garantindo a curadoria e publicação das melhores ofertas sem necessidade de intervenção humana.",
+          "<strong>🚀 Entrega:</strong> Produção e homologação isoladas, backups e restauração validados, HTTPS renovável e rotinas operacionais automatizadas.",
       },
     },
     skills: {
@@ -252,7 +252,7 @@ window.translations = {
       roleLabel: "My role",
       tech: "Tech",
       p1: {
-        number: "Project 01",
+        number: "Project 02",
         title: "Brotar+ · Digital Storefront Platform",
         role: "Capstone · Mobile · UX/UI",
         problem:
@@ -265,7 +265,7 @@ window.translations = {
           "<strong>📊 Results:</strong> Prototype validated with real users—considered intuitive and useful, with high intent to use and strong potential to expand sales and digital reach.",
       },
       p2: {
-        number: "Project 02",
+        number: "Project 03",
         title: "WhatsApp Assistant",
         role: "Independent development · AI · Voice",
         problem:
@@ -278,7 +278,7 @@ window.translations = {
           "<strong>⚡ Differentiator:</strong> Voice-first workflow that reduces manual interaction, letting users operate without constantly touching the phone.",
       },
       p3: {
-        number: "Project 03",
+        number: "Project 04",
         title: "Climatic Adventure · Educational Game",
         role: "Game Dev · Academic project · NASA hackathon",
         problem:
@@ -290,18 +290,18 @@ window.translations = {
         highlight:
           "<strong>🌍 Impact:</strong> 89.5% reported learning about climate change and 84.2% recognized the game’s potential for environmental awareness.",
       },
-      p4: {
-        number: "Project 04",
-        title: "AffiliateFlow · Marketing Automation",
-        role: "Automation Engineering · Web Scraping · n8n",
+      p5: {
+        number: "Project 01",
+        title: "Benedito Chaves Management",
+        role: "Production web system · Django · DevSecOps",
         problem:
-          "Manually finding and promoting affiliate offers and products is time-consuming and unscalable, resulting in missed daily commission opportunities.",
+          "An assistance operation needed to centralize clients, contracts, billing, coupons, and documents with traceability and access control.",
         solution:
-          "Developed an automated data pipeline using n8n that tracks affiliate platforms, identifies the best offers based on conversion criteria, and automatically publishes the links to broadcasting channels (Telegram/WhatsApp).",
+          "Built and deployed a complete web platform with role-based access, MFA, configurable grace periods, separate operational history and administrative audit, and customizable coupon layouts.",
         myRole:
-          "Created the visual workflow in n8n, integrated product platforms via API, manipulated data using JSON/JavaScript, and configured webhooks for automated message dispatching.",
+          "Worked end to end: Django/PostgreSQL architecture, business rules, interface, testing, VPS hardening, Nginx/HTTPS, R2 storage, checksummed backups, restore drills, and operational documentation.",
         highlight:
-          "<strong>⚙️ Efficiency:</strong> A 100% automated flow that works 24/7, ensuring the curation and publication of the best offers without human intervention.",
+          "<strong>🚀 Delivery:</strong> Isolated production and staging environments, validated backups and restores, renewable HTTPS, and automated operational routines.",
       },
     },
     skills: {

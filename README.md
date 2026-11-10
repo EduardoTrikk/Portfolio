@@ -65,6 +65,13 @@ Links para redes sociais e opção de cópia de email com um clique.
 - Backend com Node.js e Frontend com React
 - Banco de dados SQL
 
+### Gestão Benedito Chaves
+**Sistema web em produção — Django · PostgreSQL · DevSecOps**
+- Plataforma para gestão de clientes, contratos, cobranças, cupons e documentos
+- Perfis de acesso, MFA, carência configurável e separação entre histórico operacional e auditoria administrativa
+- Produção e homologação isoladas, HTTPS, Nginx, Cloudflare R2 e backups com checksum
+- Ensaios de restauração, rotinas agendadas e documentação operacional para continuidade do serviço
+
 ### [Outros projetos em desenvolvimento...]
 
 ---
